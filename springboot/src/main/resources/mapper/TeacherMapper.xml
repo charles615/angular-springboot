@@ -8,11 +8,8 @@
 
     <resultMap id="TeacherMap" type="com.demo.entity.Teacher">
         <id column="id" property="id"></id>
-        <result column="name" property="name"></result>
-        <result column="sex" property="sex"></result>
-        <result column="email" property="email"></result>
-        <result column="create_time" property="createTime"></result>
-        <result column="update_time" property="updateTime"></result>
+
+
     </resultMap>
 
 
@@ -21,5 +18,23 @@
         SELECT * FROM teacher
     </select>
 
+    <select id="getById" resultMap="TeacherMap">
+        SELECT * FROM teacher where id = #{id}
+    </select>
+
+    <insert id="insert"  useGeneratedKeys="true" keyProperty="id" >
+        INSERT INTO teacher(name, email
+        ) VALUES (
+         #{name}, #{email}
+        )
+    </insert>
+
+    <update id="update">
+        UPDATE teacher SET name = #{name}, email = #{email} WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM teacher where id = #{id};
+    </delete>
 
 </mapper>

@@ -1,0 +1,17 @@
+<pre>Name: {{ teacher?.name }}</pre>
+<pre>Email: {{ teacher?.email }}</pre>
+<form id="teacherAddForm" (ngSubmit)="OnChange()">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" placeholder="Input name here." [(ngModel)]="teacher.name" />
+    </div>
+   
+    <div>
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" placeholder="Input email here." [(ngModel)]="teacher.email"/>
+    </div>
+    
+    <div>
+        <button>Submit</button>
+    </div>
+</form>

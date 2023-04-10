@@ -17,9 +17,16 @@ public class TeacherMapperTests {
     TeacherMapper teacherMapper;
 
     @Test
-    public void findById() {
+    public void findAll() {
         List<Teacher> list = teacherMapper.getAll();
         list.forEach(System.out::println);
+    }
+
+    @Test
+    public void findById() {
+        Long id = 14L;
+        Teacher t = teacherMapper.getById(id);
+        System.out.println(t);
     }
 
 

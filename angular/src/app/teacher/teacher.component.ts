@@ -17,7 +17,7 @@ export class TeacherComponent implements OnInit{
   
   ngOnInit() {
     
-    const url = 'http://localhost:8080/hello';
+    const url = 'http://localhost:8080/teacher';
     const self = this;
 
     
@@ -25,7 +25,6 @@ export class TeacherComponent implements OnInit{
       self.teachers = response;
     };
 
-    
     const error = function(response: any) {
       console.log(response);
       console.error('请求出错');
@@ -34,6 +33,19 @@ export class TeacherComponent implements OnInit{
     
     this.httpClient.get(url)
       .subscribe(success, error);
+  }
+
+
+  onDelete(teacher:any) {
+    console.log(teacher);
+    const url = 'http://localhost:8080/teacher/' + teacher.id;
+    console.log(url);
+    this.httpClient.delete(url).subscribe(() => {
+      console.log('删除成功');
+      this.ngOnInit();
+    }, () => {
+      console.log('Fail');
+    });
   }
  }
 
