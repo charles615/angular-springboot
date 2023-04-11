@@ -1,17 +1,21 @@
-<pre>Name: {{ teacher?.name }}</pre>
-<pre>Email: {{ teacher?.email }}</pre>
-<form id="teacherAddForm" (ngSubmit)="OnChange()">
-    <div>
-        <label for="name">Name: </label>
-        <input type="text" id="name" name="name" placeholder="Input name here." [(ngModel)]="teacher.name" />
+<br><br>
+
+<div class="container">
+    <div class="row">
+        <form id="teacherAddForm" (ngSubmit)="OnChange()">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Input name here." [(ngModel)]="teacher.name" />
+            </div>
+           
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Input email here." [(ngModel)]="teacher.email"/>
+            </div>
+            
+            <br><br>
+            <button class="btn btn-primary">Submit</button>
+            
+        </form>
     </div>
-   
-    <div>
-        <label for="email">Email: </label>
-        <input type="text" id="email" name="email" placeholder="Input email here." [(ngModel)]="teacher.email"/>
-    </div>
-    
-    <div>
-        <button>Submit</button>
-    </div>
-</form>
+</div>

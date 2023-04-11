@@ -1,23 +1,29 @@
 package com.demo.entity;
 
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "teacher")
-public class Teacher {
-
-
+@Table(name = "klass")
+public class Klass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+//    @JoinColumn(name="teacher_id")
+    private Teacher teacher;
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
     private String name;
 
-    private String email;
-
-
-
-    public Teacher() {
+    public Klass() {
     }
 
     public Long getId() {
@@ -28,6 +34,8 @@ public class Teacher {
         this.id = id;
     }
 
+
+
     public String getName() {
         return name;
     }
@@ -36,23 +44,12 @@ public class Teacher {
         this.name = name;
     }
 
-
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-
     @Override
     public String toString() {
-        return "Teacher{" +
+        return "Klass{" +
                 "id=" + id +
+                ", teacher=" + teacher +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
                 '}';
     }
 }

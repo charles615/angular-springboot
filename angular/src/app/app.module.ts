@@ -5,17 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeacherModule } from './teacher/teacher.module';
 
-import { SharedModule } from './shared/shared/shared.module';
+
+import { KlassModule } from './klass/klass.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TeacherModule,
-    SharedModule
+    CommonModule,
+    FormsModule,
+    KlassModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

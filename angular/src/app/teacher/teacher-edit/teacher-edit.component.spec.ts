@@ -1,6 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from "@angular/router/testing";
 import { TeacherEditComponent } from './teacher-edit.component';
+import {
+  HttpClientTestingModule,
+  HttpTestingController
+} from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('TeacherEditComponent', () => {
   let component: TeacherEditComponent;
@@ -8,7 +13,8 @@ describe('TeacherEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TeacherEditComponent ]
+      declarations: [ TeacherEditComponent ],
+      imports: [ RouterTestingModule, HttpClientTestingModule, FormsModule ]
     })
     .compileComponents();
 
