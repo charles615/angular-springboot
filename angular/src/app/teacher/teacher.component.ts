@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Teacher } from '../norm/entity/teacher';
+import { Teacher } from './teacher';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

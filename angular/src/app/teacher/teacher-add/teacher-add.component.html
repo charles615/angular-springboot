@@ -1,29 +1,17 @@
-
-<br>
-
-<div class="container">
-    <div class="row">
-        <form id="teacherAddForm" (ngSubmit)="OnSubmit()">
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Name: </label>
-                    <input type="text" id="name" class="form-control" name="name" placeholder="Input name here." [(ngModel)]="name" />
-                    <small class="form-text text-muted">Name needs to be either in English characters or numbers</small>
-                </div>
-               
-                <div class="form-group">
-                    <label for="email">Email: </label>
-                    <input type="text" id="email" class="form-control" name="email" placeholder="Input email here." [(ngModel)]="email"/>
-                </div>
-            </div>
-            
-            <br><br>
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
-            
-        </form>
+<pre>Name: {{ name }}</pre>
+<pre>Email: {{ email }}</pre>
+<form id="teacherAddForm" (ngSubmit)="OnSubmit()">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" placeholder="Input name here." [(ngModel)]="name" />
     </div>
-</div>
-
-
+   
+    <div>
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" placeholder="Input email here." [(ngModel)]="email"/>
+    </div>
+    
+    <div>
+        <button>Submit</button>
+    </div>
+</form>

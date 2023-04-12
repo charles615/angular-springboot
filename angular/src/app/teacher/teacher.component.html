@@ -1,45 +1,25 @@
-<br><br><br>
-<div class="container">
-  <div class="row">
-    <a routerLink="/add"><button class="btn btn-primary">新增</button></a>
-    
-  </div>
-</div>
-<br>
+<a routerLink="./add">新增</a>
 
-<div class="container">
-  <div class="row">
-    <table class="table table-bordered" style="text-align: center;">
-      
-      <thead>
-        <tr class="table-success">
-          <th>序号</th>
-          <th>姓名</th>
-          <th>邮箱</th>
-          <th colspan="2">操作</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let teacher of teachers" >
-          <td>{{teacher.id}}</td>
-          <td>{{teacher.name}}</td>
-          <td>{{teacher.email}}</td>
-    
-          <td>
-            <a [routerLink]="['/edit', teacher.id]"><button class="btn btn-primary">修改</button></a>
-          </td>
-          <td>
-            <button (click)="onDelete(teacher)" class="btn btn-primary">删除</button>
-          </td>
-        </tr>
-      </tbody>
-      
-    </table>
-  </div>
-</div>
+<table>
+    <tr>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>邮箱</th>
+      <th>操作</th>
+    </tr>
+    <tr *ngFor="let teacher of teachers" >
+      <td>{{teacher.id}}</td>
+      <td>{{teacher.name}}</td>
+      <td>{{teacher.email}}</td>
 
-
-
+      <td>
+        <a [routerLink]="['/edit', teacher.id]">修改</a>
+      </td>
+      <td>
+        <button (click)="onDelete(teacher)">删除</button>
+      </td>
+    </tr>
+  </table>
 
 
   

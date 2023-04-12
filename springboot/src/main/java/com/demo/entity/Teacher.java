@@ -16,10 +16,6 @@ public class Teacher {
     private String email;
 
 
-
-    public Teacher() {
-    }
-
     public Long getId() {
         return id;
     }
@@ -52,6 +48,7 @@ public class Teacher {
         return "Teacher{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+
                 ", email='" + email + '\'' +
                 '}';
     }
