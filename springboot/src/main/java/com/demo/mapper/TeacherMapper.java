@@ -10,9 +10,9 @@ public interface TeacherMapper {
     List<Teacher> getAll();
     int insert(Teacher teacher);
 
-    Teacher getById(Long id);
+    Teacher getById(int id);
 
     int update(Teacher teacher);
-    int delete(Long id);
+    int delete(int id);
 
 }

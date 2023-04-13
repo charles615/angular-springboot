@@ -9,9 +9,9 @@ public interface ITeacherService {
     int add(Teacher teacher);
     List<Teacher> show();
 
-    Teacher find(Long id);
+    Teacher find(int id);
 
     int update(Teacher teacher);
 
-    int delete(Long id);
+    int delete(int id);
 }

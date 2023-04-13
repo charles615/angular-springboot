@@ -1,36 +1,38 @@
 package com.demo.controller;
 
+
 import com.demo.entity.Klass;
+import com.demo.entity.Teacher;
 import com.demo.mapper.KlassMapper;
-import com.demo.repository.KlassRepository;
+import com.demo.service.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.PostRemove;
 import java.util.List;
 
+
 @RestController
-@RequestMapping("Klass")
+@RequestMapping("klass")
 public class KlassController {
 
     @Autowired
     private KlassMapper klassMapper;
 
-    @Autowired
-    private KlassRepository klassRepository;
 
-
-    @GetMapping
-    public List<Klass> getAll(@RequestParam String name) {
-        return this.klassRepository.findAllByNameContains(name);
-//        return  klassMapper.getAllByName(name);
+    @RequestMapping("")
+    @CrossOrigin("*")
+    public List<Klass> show() {
+        return klassMapper.getAll();
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @CrossOrigin("*")
     public void save(@RequestBody Klass klass) {
-        klassRepository.save(klass);
+        System.out.println("触发保存方法");
+        klassMapper.insert(klass);
     }
+
+
+
 
 }

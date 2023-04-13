@@ -1,33 +1,28 @@
 package com.demo.mapper;
 
+import com.demo.entity.Klass;
 import com.demo.entity.Teacher;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.junit.runner.RunWith;
 
 import java.util.List;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class TeacherMapperTests {
+public class KlassMapperTests {
 
     @Autowired
-    TeacherMapper teacherMapper;
+    KlassMapper klassMapper;
 
     @Test
     public void findAll() {
-        List<Teacher> list = teacherMapper.getAll();
+        List<Klass> list = klassMapper.getAll();
         list.forEach(System.out::println);
     }
 
-    @Test
-    public void findById() {
-        int id = 1;
-        Teacher t = teacherMapper.getById(id);
-        System.out.println(t);
-    }
 
 
 }

@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class IndexComponent implements OnInit{
 
   private message = '';
-  private url = 'http://localhost:8080/Klass';
+  private url = 'http://localhost:8080/klass';
 
   params = {
     name: ''
