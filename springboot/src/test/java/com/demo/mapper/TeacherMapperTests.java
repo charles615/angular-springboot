@@ -24,7 +24,7 @@ public class TeacherMapperTests {
 
     @Test
     public void findById() {
-        int id = 1;
+        Long id = 14L;
         Teacher t = teacherMapper.getById(id);
         System.out.println(t);
     }

@@ -26,8 +26,8 @@ export class KlassAddComponent implements OnInit{
 
   onSubmit() {
     const url = 'http://localhost:8080/Klass';
-    const klass = new Klass(undefined, this.name?.value,
-      new Teacher(parseInt(this.teacherId?.value, 10), undefined, undefined)
+    const klass = new Klass(1, this.name?.value,
+      new Teacher(parseInt(this.teacherId?.value, 10), 'undefined', 'undefined')
     );
     this.httpClient.post(url, klass)
       .subscribe(() => {
