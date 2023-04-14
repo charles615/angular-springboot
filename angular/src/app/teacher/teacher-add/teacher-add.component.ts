@@ -32,7 +32,7 @@ export class TeacherAddComponent implements OnInit{
 
     this.httpClient.post(url, teacher).subscribe(() =>{
       console.log('Success.');
-      this.router.navigate(['./']);
+      this.router.navigate(['./teacher']);
       }, (response) => {
         console.error('Failed', response);
       });

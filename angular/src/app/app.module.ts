@@ -10,11 +10,17 @@ import { KlassModule } from './klass/klass.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
+    FooterComponent,
+    WelcomeComponent,
     
   ],
   imports: [

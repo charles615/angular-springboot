@@ -22,6 +22,13 @@ public class KlassMapperTests {
         List<Klass> list = klassMapper.getAll();
         list.forEach(System.out::println);
     }
+    @Test
+    public void findBYName() {
+        String name = "Sport";
+        Klass klass = klassMapper.getByName(name);
+        System.out.println(klass);
+    }
+
 
 
 

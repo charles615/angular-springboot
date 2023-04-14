@@ -5,9 +5,10 @@ import { TeacherAddComponent } from './teacher/teacher-add/teacher-add.component
 import { TeacherEditComponent } from './teacher/teacher-edit/teacher-edit.component';
 import { IndexComponent } from './klass/index.component';
 import { KlassAddComponent } from './klass/klass-add/klass-add.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  { path: '', component: TeacherComponent },
+  { path: '', component: WelcomeComponent },
   { path: 'teacher', component: TeacherComponent },
   { path: 'add', component: TeacherAddComponent },
   { path: 'edit/:id', component : TeacherEditComponent },

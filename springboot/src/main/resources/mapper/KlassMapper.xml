@@ -21,14 +21,21 @@
     SELECT * FROM teacher t where id = #{tid}
     </select>
 
+    <select id="getByName" resultMap="KlassTeacher">
+        SELECT * FROM klass where name = #{name}
+    </select>
 
 
-    <insert id="insert"  useGeneratedKeys="true" keyProperty="id" >
-        INSERT INTO klass(name, teacher
-        ) VALUES (
-        #{name}, #{teacher}
+
+    <insert id="insert" >
+        INSERT INTO klass VALUES (
+        null, #{name}, #{tid}
         )
     </insert>
+
+    <update id="update">
+        UPDATE klass SET name = #{name}, tid = #{tid} WHERE id = #{id}
+    </update>
 
 
 </mapper>

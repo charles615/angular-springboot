@@ -13,10 +13,10 @@ import { Teacher } from 'src/app/norm/entity/teacher';
 export class KlassAddComponent implements OnInit{
   
   public static errorMessage = '数据保存失败，这可能是由于网络的原因引起的';
-  name ?: FormControl;
-  teacherId ?: FormControl;
+  name : string;
+  tid : number;
 
-  message ?: string;
+  message : string;
   
   ngOnInit(): void {}
 
@@ -25,25 +25,44 @@ export class KlassAddComponent implements OnInit{
               private route: ActivatedRoute){}
 
   onSubmit() {
-    const url = 'http://localhost:8080/Klass';
-    const klass = new Klass(undefined, this.name?.value,
-      new Teacher(parseInt(this.teacherId?.value, 10), undefined, undefined)
-    );
-    this.httpClient.post(url, klass)
-      .subscribe(() => {
-        console.log('保存成功');
-        this.router.navigate([''], {relativeTo: this.route});
-      }, (response) => {
-        console.log(`向${url}发起的post请求发生错误` + response);
-        this.setMessage(KlassAddComponent.errorMessage);
-      });
-  }
+    const url = 'http://localhost:8080/klass';
+    // const klass = new Klass(undefined, this.name?.value,
+    //   new Teacher(parseInt(this.teacherId?.value, 10), undefined, undefined)
+    // );
 
-  private setMessage(message: string): void {
-    this.message = message;
-    setTimeout(() => {
-      this.message = '';
-    }, 1500);
+    const klass = {
+      name: this.name,
+      teacher : new Teacher(this.tid, undefined, undefined)
+    };
+      console.log(klass);
+      
+  //   this.httpClient.post(url, klass)
+  //     .subscribe(() => {
+  //       console.log('保存成功');
+  //       console.log(klass);
+  //       this.router.navigate([''], {relativeTo: this.route});
+  //     }, (response) => {
+  //       console.log(`向${url}发起的post请求发生错误` + response);
+  //       this.setMessage(KlassAddComponent.errorMessage);
+  //     });
+  // }
+
+  // private setMessage(message: string): void {
+  //   this.message = message;
+  //   setTimeout(() => {
+  //     this.message = '';
+  //   }, 1500);
+  // }
+
+
+  
+  this.httpClient.post(url, klass).subscribe(() =>{
+    console.log('Success.');
+    
+    this.router.navigate(['/klass']);
+    }, (response) => {
+      console.error('Failed', response);
+    });
   }
 
 }

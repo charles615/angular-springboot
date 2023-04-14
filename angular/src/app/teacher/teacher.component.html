@@ -1,7 +1,7 @@
-<br><br><br>
+<br>
 <div class="container">
   <div class="row">
-    <a routerLink="/add"><button class="btn btn-primary">新增</button></a>
+    <a routerLink="/add"><button class="btn btn-primary">Add new Teacher</button></a>
     
   </div>
 </div>
@@ -13,10 +13,10 @@
       
       <thead>
         <tr class="table-success">
-          <th>序号</th>
-          <th>姓名</th>
-          <th>邮箱</th>
-          <th colspan="2">操作</th>
+          <th>Number</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th colspan="2">Operations</th>
         </tr>
       </thead>
       <tbody>
@@ -26,10 +26,10 @@
           <td>{{teacher.email}}</td>
     
           <td>
-            <a [routerLink]="['/edit', teacher.id]"><button class="btn btn-primary">修改</button></a>
+            <a [routerLink]="['/edit', teacher.id]"><button class="btn btn-primary">Edit</button></a>
           </td>
           <td>
-            <button (click)="onDelete(teacher)" class="btn btn-primary">删除</button>
+            <button (click)="onDelete(teacher)" class="btn btn-primary">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -38,7 +38,7 @@
   </div>
 </div>
 
-
+<br><br><br><br><br><br><br><br><br><br><br>
 
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Teacher } from '../norm/entity/teacher';
 import { Klass } from '../norm/entity/klass';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -17,14 +17,20 @@ export class IndexComponent implements OnInit{
     name: ''
   }
 
+  show : boolean = false;
+
   // klasses = [
   //   new Klass(1, 'class1', new Teacher(1, 'charles', '123')),
   //   new Klass(2, 'class2', new Teacher(2, 'charles2', '123')),
   // ]
 
   klasses : any;
+  showKlass : Klass;
+  
 
-  constructor(private httpClient: HttpClient){}
+  constructor(private route: ActivatedRoute, 
+              private httpClient: HttpClient, 
+              private router: Router,){}
 
   ngOnInit(): void {
     this.onQuery();
@@ -40,6 +46,27 @@ export class IndexComponent implements OnInit{
       }, () => {
         console.log(`请求${this.url}错误`);
       });
+  }
+
+  onChange(klass : Klass) {
+    this.show = !this.show;
+    this.showKlass = klass;
+  }
+
+  onUpdate() {
+    
+    console.log(this.showKlass);
+    
+    this.httpClient.put(this.url, this.showKlass).subscribe(() =>{
+      console.log('Success.');
+      
+
+      this.ngOnInit();
+      
+      }, () => {
+        console.error('Failed');
+      });
+
   }
 
 }

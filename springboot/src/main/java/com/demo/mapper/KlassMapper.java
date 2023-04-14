@@ -10,7 +10,11 @@ public interface KlassMapper {
 
 
     List<Klass> getAll();
-    int insert(Klass klass);
+    int insert(String name, int tid);
+
+    Klass getByName(String name);
+
+    int update(int id, String name, int tid);
 
 
 }

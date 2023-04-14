@@ -1,18 +1,32 @@
-<br><br>
+<br>
+<h4>Add new class：</h4>
+<br>
 
 <div class="container">
     <div class="row">
         
-        <form (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="name">Name:<input id="name" class="form-control" type="text"/></label>
-            </div>
-          <div class="form-group">
-            <label for="teacherId">Teacher ID:<input type="number" class="form-control" id="teacherId"></label>
-          </div>
-          <br>
+      <form id="teacherAddForm" (ngSubmit)="onSubmit()">
 
-          <button class="btn btn-primary">保存</button>
-        </form>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" id="name" class="form-control" name="name" placeholder="Input name here." [(ngModel)]="name" />
+                <small class="form-text text-muted">Name needs to be either in English characters or numbers</small>
+            </div>
+           
+            <div class="form-group">
+                <label for="email">Teacher ID: </label>
+                <input type="text" id="email" class="form-control" name="email" placeholder="Input Teacher ID here." [(ngModel)]="tid"/>
+            </div>
+        </div>
+        
+        <br><br>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+    </form>
     </div>
 </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>

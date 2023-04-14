@@ -19,9 +19,10 @@
         <table class="table table-bordered">
             <thead class="table-success">
                 <tr>
-                    <th>序号</th>
-                    <th>班级名称</th>
-                    <th>Teacher</th>
+                    <th>Number</th>
+                    <th>Class Name</th>
+                    <th>Assigned Teacher</th>
+                    <th>Operation</th>
                 </tr>
                 
             </thead>
@@ -30,10 +31,32 @@
                 <td>{{i + 1}}</td>
                 <td>{{ klass.name }}</td>
                 <td>{{ klass.teacher.name }}</td>
+                <td><button class="btn-block btn" (click)="onChange(klass)">Edit</button></td>
             </tbody>
         </table>
-        
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <form id="KlassAddForm" (ngSubmit)="onUpdate()" *ngIf="show">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Input name here." [(ngModel)]="showKlass.name" />
+            </div>
+           
+            <div class="form-group">
+                <label for="tid">Teacher ID: </label>
+                <input type="text" class="form-control" id="tid" name="tid" placeholder="Input email here." [(ngModel)]="showKlass.teacher.id"/>
+            </div>
+            
+            <br><br>
+            <button class="btn btn-primary">Update</button>
+            
+        </form>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
 
 

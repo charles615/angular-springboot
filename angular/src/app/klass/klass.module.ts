@@ -6,6 +6,7 @@ import { KlassAddComponent } from './klass-add/klass-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [ 
   {
     path: '',
@@ -19,7 +20,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     IndexComponent,
-    KlassAddComponent
+    KlassAddComponent,
+
   ],
   imports: [
     SharedModule,
