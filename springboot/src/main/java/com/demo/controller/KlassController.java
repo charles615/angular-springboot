@@ -13,7 +13,7 @@ import javax.persistence.PostRemove;
 import java.util.List;
 
 @RestController
-@RequestMapping("Klass")
+@RequestMapping("klass")
 public class KlassController {
 
     @Autowired
@@ -21,8 +21,7 @@ public class KlassController {
     @Autowired
     private TeacherMapper teacherMapper;
 
-    @Autowired
-    private KlassRepository klassRepository;
+
 
     @RequestMapping("")
     @CrossOrigin("*")
@@ -31,7 +30,7 @@ public class KlassController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @CrossOrigin("*")
     public void save(@RequestBody Klass klass) {
         System.out.println("触发保存方法");
         System.out.println(klass.getTeacher().getId());

@@ -35,7 +35,7 @@ public class TeacherController {
 
     @GetMapping("{id}")
     @CrossOrigin("*")
-    public Teacher getById(@PathVariable Long id) {
+    public Teacher getById(@PathVariable int id) {
 
         return teacherService.find(id);
     }
@@ -48,7 +48,7 @@ public class TeacherController {
 
     @DeleteMapping("{id}")
     @CrossOrigin("*")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         teacherService.delete(id);
     }
 

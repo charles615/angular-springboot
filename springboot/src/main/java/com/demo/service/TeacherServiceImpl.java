@@ -23,7 +23,7 @@ public class TeacherServiceImpl implements ITeacherService {
     }
 
     @Override
-    public Teacher find(Long id) {
+    public Teacher find(int id) {
         return teacherMapper.getById(id);
     }
 
@@ -33,7 +33,7 @@ public class TeacherServiceImpl implements ITeacherService {
     }
 
     @Override
-    public int delete(Long id) {
+    public int delete(int id) {
         return teacherMapper.delete(id);
     }
 
