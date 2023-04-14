@@ -1,15 +1,10 @@
 package com.demo.controller;
 
 import com.demo.entity.Klass;
-import com.demo.mapper.KlassMapper;
 import com.demo.mapper.TeacherMapper;
 import com.demo.service.IKlassService;
-import com.demo.service.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.PostRemove;
 import java.util.List;
 
 @RestController

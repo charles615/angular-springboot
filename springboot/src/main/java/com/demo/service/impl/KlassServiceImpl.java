@@ -1,11 +1,9 @@
 package com.demo.service.impl;
 
 import com.demo.entity.Klass;
-import com.demo.entity.Teacher;
 import com.demo.mapper.KlassMapper;
 import com.demo.mapper.TeacherMapper;
 import com.demo.service.IKlassService;
-import com.demo.service.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

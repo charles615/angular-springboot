@@ -1,5 +1,6 @@
-package com.demo.service;
+package com.demo.service.impl;
 
+import com.demo.service.ITeacherService;
 import com.demo.entity.Teacher;
 import com.demo.mapper.TeacherMapper;
 import org.springframework.beans.factory.annotation.Autowired;

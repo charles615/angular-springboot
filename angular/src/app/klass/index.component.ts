@@ -62,6 +62,7 @@ export class IndexComponent implements OnInit{
       
 
       this.ngOnInit();
+      this.show = !this.show;
       
       }, () => {
         console.error('Failed');
