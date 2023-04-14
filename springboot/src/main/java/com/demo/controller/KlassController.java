@@ -1,20 +1,19 @@
 package com.demo.controller;
 
-
 import com.demo.entity.Klass;
-import com.demo.entity.Teacher;
 import com.demo.mapper.KlassMapper;
 import com.demo.mapper.TeacherMapper;
 import com.demo.service.IKlassService;
 import com.demo.service.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.PostRemove;
 import java.util.List;
 
-
 @RestController
-@RequestMapping("klass")
+@RequestMapping("Klass")
 public class KlassController {
 
     @Autowired
@@ -22,6 +21,8 @@ public class KlassController {
     @Autowired
     private TeacherMapper teacherMapper;
 
+    @Autowired
+    private KlassRepository klassRepository;
 
     @RequestMapping("")
     @CrossOrigin("*")
@@ -30,7 +31,7 @@ public class KlassController {
     }
 
     @PostMapping
-    @CrossOrigin("*")
+    @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Klass klass) {
         System.out.println("触发保存方法");
         System.out.println(klass.getTeacher().getId());

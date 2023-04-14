@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class IndexComponent implements OnInit{
 
   private message = '';
-  private url = 'http://localhost:8080/klass';
+  private url = 'http://localhost:8080/Klass';
 
   params = {
     name: ''

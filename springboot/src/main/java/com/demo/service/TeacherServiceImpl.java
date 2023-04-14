@@ -1,8 +1,7 @@
-package com.demo.service.impl;
+package com.demo.service;
 
 import com.demo.entity.Teacher;
 import com.demo.mapper.TeacherMapper;
-import com.demo.service.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class TeacherServiceImpl implements ITeacherService {
     }
 
     @Override
-    public Teacher find(int id) {
+    public Teacher find(Long id) {
         return teacherMapper.getById(id);
     }
 
@@ -34,7 +33,7 @@ public class TeacherServiceImpl implements ITeacherService {
     }
 
     @Override
-    public int delete(int id) {
+    public int delete(Long id) {
         return teacherMapper.delete(id);
     }
 
